@@ -1,0 +1,31 @@
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+
+startCommand:
+  type: stdio
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required:
+      - claudeBin
+    properties:
+      claudeBin:
+        type: string
+        description: Path to the Claude CLI executable.
+      logLevel:
+        type: string
+        default: info
+        description: Optional log level (defaults to 'info').
+  commandFunction:
+    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
+    |-
+    (config) => ({
+      command: 'node',
+      args: ['build/index.js'],
+      env: {
+        CLAUDE_BIN: config.claudeBin,
+        LOG_LEVEL: config.logLevel || 'info'
+      }
+    })
+  exampleConfig:
+    claudeBin: /usr/local/bin/claude
+    logLevel: debug

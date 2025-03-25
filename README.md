@@ -1,5 +1,7 @@
 # claude-code-mcp Project
 
+[![smithery badge](https://smithery.ai/badge/@KunihiroS/claude-code-mcp-server)](https://smithery.ai/server/@KunihiroS/claude-code-mcp-server)
+
 ## Overview
 
 The claude-code-mcp project is an MCP server for Claude Code.
@@ -31,6 +33,15 @@ The main roles of the server are:
 
 ### Installation
 
+#### Installing via Smithery
+
+To install claude-code-mcp-server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@KunihiroS/claude-code-mcp-server):
+
+```bash
+npx -y @smithery/cli install @KunihiroS/claude-code-mcp-server --client claude
+```
+
+#### Installing Manually
 1.  Clone the repository:
 
     ```bash

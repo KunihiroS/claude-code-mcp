@@ -4,23 +4,30 @@ FROM node:18-alpine
 # Set working directory
 WORKDIR /app
 
-# Install dependencies
+# Install required OS packages (git may be needed by optional deps)
 RUN apk add --no-cache git
 
-# Clone the repository
-RUN git clone https://github.com/KunihiroS/claude-code-mcp.git
+# Use pnpm with Corepack (falls back to npm-global if corepack path changes)
+RUN corepack enable && corepack prepare pnpm@10.15.1 --activate || npm i -g pnpm
 
-# Change directory to the server
-WORKDIR /app/claude-code-mcp/claude-code-server
+# Copy only lockfiles first to maximize layer cache
+COPY package.json pnpm-lock.yaml ./
 
-# Install npm dependencies
-RUN npm install
+# Install dependencies using the exact locked versions
+RUN pnpm install --frozen-lockfile
 
-# Build the project
-RUN npm run build
+# Copy the rest of the source
+COPY . .
 
-# Expose port if needed (optional, adjust if your MCP server needs a specific port)
-EXPOSE 3000
+# Build the project (generates claude-code-server/build/index.js)
+RUN pnpm run build
 
-# Command to run the server
-CMD ["node", "build/index.js"]
+# Environment
+ENV NODE_ENV=production
+
+# NOTE: You must provide CLAUDE_BIN at runtime, e.g.
+#   docker run --rm -e CLAUDE_BIN=/path/in/container/claude image
+# or mount the host CLI binary into the container and point CLAUDE_BIN to it.
+
+# Run the MCP server over stdio
+CMD ["node", "claude-code-server/build/index.js"]

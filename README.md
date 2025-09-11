@@ -1,7 +1,7 @@
 # claude-code-mcp Project
 
 
-## [0.1.5] - 2025-06-24
+## [0.1.6] - 2025-09-11
 
 ### Security Update
 - Update @anthropic-ai/claude-code version.

@@ -1,6 +1,6 @@
 {
   "name": "@kunihiros/claude-code-mcp",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "MCP server for Claude Code",
   "main": "claude-code-server/build/index.js",
   "type": "module",
@@ -24,7 +24,7 @@
     "winston": "^3.13.0"
   },
   "devDependencies": {
-    "@anthropic-ai/claude-code": ">=1.0.24",
+    "@anthropic-ai/claude-code": ">=1.0.105",
     "@types/dotenv": "^8.2.0",
     "@types/node": "^20.17.43",
     "typescript": "^4.9.5"

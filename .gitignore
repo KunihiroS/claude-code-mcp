@@ -42,6 +42,9 @@ build/Release
 node_modules/
 jspm_packages/
 
+# Nested npm lockfile (this repo uses pnpm lockfile at root)
+claude-code-server/package-lock.json
+
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
 

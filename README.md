@@ -1,11 +1,12 @@
 # claude-code-mcp Project
 
 
-## [0.1.7] - 2026-02-05
+## [0.1.8] - 2026-02-05
 
 ### Security Update
 - Update @modelcontextprotocol/sdk version.
 - Add zod dependency to satisfy peer dependency requirements.
+- Bump TypeScript version for compatibility with updated dependencies.
 
 ## Overview
 

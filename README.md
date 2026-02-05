@@ -1,10 +1,11 @@
 # claude-code-mcp Project
 
 
-## [0.1.6] - 2025-09-11
+## [0.1.7] - 2026-02-05
 
 ### Security Update
-- Update @anthropic-ai/claude-code version.
+- Update @modelcontextprotocol/sdk version.
+- Add zod dependency to satisfy peer dependency requirements.
 
 ## Overview
 

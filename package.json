@@ -19,9 +19,10 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.25.2",
+    "@modelcontextprotocol/sdk": "^1.26.0",
     "dotenv": "^16.4.5",
-    "winston": "^3.13.0"
+    "winston": "^3.13.0",
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "@types/dotenv": "^8.2.0",

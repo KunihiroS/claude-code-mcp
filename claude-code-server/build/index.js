@@ -29,10 +29,10 @@ const initialLogger = winston.createLogger({
 // MCP Hostからの環境変数を優先し、.envファイルはフォールバックとして扱う
 if (!process.env.CLAUDE_BIN) {
     const envPaths = [
-        path.resolve(__dirname, '../.env'),
-        path.resolve(__dirname, '../../.env'),
-        path.resolve(process.cwd(), '.env'),
-        path.resolve(process.cwd(), 'claude-code-server/.env'),
+        path.resolve(__dirname, '../.env'), // 開発環境
+        path.resolve(__dirname, '../../.env'), // ビルド後の環境
+        path.resolve(process.cwd(), '.env'), // カレントディレクトリの .env
+        path.resolve(process.cwd(), 'claude-code-server/.env'), // プロジェクトサブディレクトリの .env (後方互換性)
         path.resolve(os.homedir(), '.claude-code-mcp.env') // ホームディレクトリの .claude-code-mcp.env
     ];
     for (const envPath of envPaths) {

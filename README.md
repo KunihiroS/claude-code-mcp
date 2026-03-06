@@ -1,6 +1,15 @@
 # claude-code-mcp Project
 
 
+## [0.1.9] - 2026-03-06
+
+### Security Update
+- Add pnpm overrides to pin transitive dependencies to patched versions.
+  - `hono` ^4.12.4 (fixes serveStatic path traversal, SSE CRLF injection, Cookie attribute injection, basicAuth/bearerAuth timing)
+  - `@hono/node-server` >=1.19.10 (fixes authorization bypass via encoded slashes)
+  - `ajv` >=8.18.0 (fixes ReDoS with `$data` option)
+  - `qs` >=6.14.2 (fixes DoS via arrayLimit bypass)
+
 ## [0.1.8] - 2026-02-05
 
 ### Security Update

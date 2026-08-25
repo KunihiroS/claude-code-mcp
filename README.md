@@ -1,5 +1,14 @@
 # claude-code-mcp Project
 
+## ⚠️ Maintenance Ended (2026-08-25)
+
+This project is no longer maintained. No further updates, including security fixes, will be made.
+The repository has been archived and the npm package has been marked as deprecated.
+Existing installations will continue to work, but use at your own risk — dependency vulnerabilities reported after this date will not be addressed.
+
+If you need equivalent functionality, please fork the repository or look for actively maintained alternatives.
+
+---
 
 ## [0.1.9] - 2026-03-06
 
